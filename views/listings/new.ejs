@@ -1,0 +1,110 @@
+<% layout("/layouts/boilerplate")-%>
+<div class="row sarabun-regular">
+    <div class="col-8 offset-2 my-3">
+        <h1>Create a New Listing</h1>
+        <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+            <!-- Title -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input required type="text" name="listing[title]" class="form-control" placeholder="Add a catchy title">
+                <div class="valid-feedback">Title looks good!</div>
+                <div class="invalid-feedback">Please enter a title!</div>
+            </div>
+            
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="listing[description]" class="form-control" rows="5" required></textarea>
+                <div class="invalid-feedback">Please write a short description!</div>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input required type="file" name="listing[image]" class="form-control">
+                <div class="invalid-feedback">You forgot the image link!</div>
+            </div>
+
+            <!-- Price and GST -->
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="price" class="form-label">Price</label>
+                    <input required type="number" name="listing[price]" class="form-control" placeholder="1500">
+                    <div class="invalid-feedback">Enter the price.</div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="gstTax" class="form-label">GST Tax</label>
+                    <input required type="text" name="listing[gstTax]" class="form-control" placeholder="10%">
+                    <div class="invalid-feedback">Please enter expected GST tax in percentage.</div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="row mb-3">
+                <label class="mb-3">Select the matching categories</label>
+                <!-- <label class="form-check-label" for="Category">Select Matching Categories</label> -->
+                 <div class="form-check col-md-3 mb-3 ">
+                    <input class="form-check-input" type="checkbox" id="trending" name="listing[categories][]" value="trending">
+                    <label class="form-check-label" for="trending">Trending</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    <input class="form-check-input" type="checkbox" id="rooms" name="listing[categories][]" value="rooms">
+                    <label class="form-check-label" for="rooms">Rooms</label>
+                 </div>
+                
+                 <div class="form-check col-md-3 mb-3">
+                    <input class="form-check-input" type="checkbox" id="amazing_view" name="listing[categories][]" value="amazing view">
+                    <label class="form-check-label" for="amazing_view">Amazing View</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    <input class="form-check-input" type="checkbox" id="iconic_cities" name="listing[categories][]" value="iconic cities">
+                    <label class="form-check-label" for="iconic_cities">Iconic Cities</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    <input class="form-check-input" type="checkbox" id="treehouses" name="listing[categories][]" value="treehouses">
+                    <label class="form-check-label" for="treehouses">Treehouses</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    <input class="form-check-input" type="checkbox" id="beach" name="listing[categories][]" value="beach">
+                    <label class="form-check-label" for="beach">Beach</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    
+                    <input class="form-check-input" type="checkbox" id="camping" name="listing[categories][]" value="camping">
+                    <label class="form-check-label" for="camping">Camping</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    <input class="form-check-input" type="checkbox" id="amazing_pools" name="listing[categories][]" value="amazing pools">
+                    <label class="form-check-label" for="amazing_pools">Amazing Pools</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    
+                    <input class="form-check-input" type="checkbox" id="caves" name="listing[categories][]" value="caves">
+                    <label class="form-check-label" for="camping">Caves</label>
+                 </div>
+                 <div class="form-check col-md-3 mb-3">
+                    
+                    <input class="form-check-input" type="checkbox" id="cabin" name="listing[categories][]" value="cabins">
+                    <label class="form-check-label" for="cabins">Cabins</label>
+                 </div>
+            </div>
+
+            <!-- Location and Country -->
+            <div class="row mb-4">
+                <div class="mb-3 col-md-6">
+                    <label for="location" class="form-label">Location</label>
+                    <input required type="text" name="listing[location]" class="form-control" placeholder="Jaipur, Rajasthan">
+                    <div class="invalid-feedback">Please enter the location!</div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <input required type="text" name="listing[country]" class="form-control" placeholder="India">
+                    <div class="invalid-feedback">Please enter a valid country!</div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-dark mt-3 add-btn" type="submit">Add</button>
+        </form>
+    </div>
+</div>
