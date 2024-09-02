@@ -1,24 +1,49 @@
-<style>
-  .btn-search{
-    background-color: #fe424d;
-    color:#fff;
-    border-radius: 25px;
-    padding: 0.3rem 1rem 0.3rem 1rem;
-  }
-  .btn-search:hover{
-    background-color: #fe424d;
-    color:#fff;
-    border-radius: 25px;
-  }
-  .btn-search i{
-    display: inline;
-    
-  }
-  .input-btn{
-    border-radius: 25px;
-    padding: 0.3rem 3rem 0.3rem 3rem;
-  }
-</style>
+  <style>
+        .btn-search{
+          background-color: #fe424d;
+          color:#fff;
+          border-radius: 25px;
+          padding: 0.3rem 1rem 0.3rem 1rem;
+        }
+        .btn-search:hover{
+          background-color: #fe424d;
+          color:#fff;
+          border-radius: 25px;
+        }
+        .btn-search i{
+          display: inline;
+          
+        }
+        .input-btn{
+          border-radius: 25px;
+          width:400px;
+          padding: 0.3rem 3rem 0.3rem 3rem;
+        }
+
+        .dropdown-toggle{
+           border-radius: 25px;
+           border: 1px solid #ccc;
+           font-size: .8rem;
+           
+        }
+        .dropdown-toggle:hover{
+           border-radius: 25px;
+           border: 1px solid #ccc;
+           box-shadow: 1px 1px 5px #ccc;
+        }
+        .dropdown-menu{
+            border: 0px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px #ccc;
+        }
+        .dropdown-item{
+            margin: 0px ;
+            padding: 5px;
+            margin-left: 5px;
+            font-size: .9rem;
+        }
+        
+      </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top sarabun-regular">
     <div class="container-fluid">
@@ -39,17 +64,31 @@
           </form>
         </div>
 
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
-          <%if(!currUser){%>
-            <a class="nav-link" aria-current="page" href="/signup"><b>Sign up</b></a>
-            <a class="nav-link" href="/login"><b>Log in</b></a>
-          <%}%>
+      <div class="navbar-nav ms-auto me-3">
+              <a class="nav-link mt-1 me-1" href="/listings/new">Airbnb your home</a>
+
+              <div class="dropdown-center me-5 py-1">
+                <button class="btn  dropdown-toggle py-2" type="button" data-bs-toggle="dropdown" >
+                  
+                    <i class="fa fa-user-circle fs-4 mx-1" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu ">
+                 <%if(!currUser){%>
+                  <li>  <a class="dropdown-item" aria-current="page" href="/signup">Sign up</a></li>
+                  <li> <a class="dropdown-item" href="/login">Log in</a></li>
+                   <%}%>
           <% if(currUser){%>
-            <a class="nav-link" href="/logout"><b>Log out</b></a>
-          <%}%>
-         
-        </div>
+                  <li> <a class="dropdown-item" href="/logout">Log out</a></li>
+              <%}%><hr>
+
+                  <li>  <a class="dropdown-item" href="/listings/new">Airbnb your home</a></li>
+                </ul>
+              </div> 
+             
+            </div>
+
+      
+        
       </div>
     </div>
   </nav>
