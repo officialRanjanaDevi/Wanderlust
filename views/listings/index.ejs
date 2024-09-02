@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate")-%>
-  <div id="filters" class="sarabun-regular">
+  <div id="filters" class="sarabun-regular mt-3">
     <a class="filter text-center" href="/listings/category/trending">
       <div><i class="fa-solid fa-fire"></i></div>
       <p>Trending</p>
@@ -66,11 +66,11 @@
             <p class="card-text sarabun-regular">
               <b>
                 <%=list.title%>
-              </b><br>
-            
+              </b></p>
+               <p class="text-secondary fs-6">
                 Hosted by <%=list.owner.username%>
+               </p><p>
             
-              <br>
               <b>&#x20b9;<%=list.price.toLocaleString("en-IN")%></b> / per night
               <i class="tax-info">+<%=list.gstTax%>% GST</i>
             </p>
