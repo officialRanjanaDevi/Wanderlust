@@ -95,11 +95,11 @@
                                 </p>
                               
                             </div>
-                            
+                             <% if(currUser && currUser._id.equals(list.owner._id)){%> 
                             <form method="POST" action="/listings/<%=list._id%>/reviews/<%=review._id%>?_method=DELETE">
                                 <button class="btn btn-sm btn-dark mb-1">Delete</button>
                             </form>
-                           
+                            <%}%>
                         </div>
                         <%}%>
                 </div>
